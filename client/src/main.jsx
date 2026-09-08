@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { Canvas } from '@react-three/fiber'
+import Experience from './component/Experience.jsx'
+import './main.css'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+const root = createRoot(document.querySelector("#root"))
+
+root.render(
+	<Canvas
+		shadows
+        camera={ {
+            fov: 45,
+            near: 0.1,
+            far: 200,
+            position: [ 3, 2, 6 ]
+        } }
+	>
+		<Experience />
+	</Canvas>
 )
